@@ -1,0 +1,67 @@
+/**
+ * ==============================================
+ * Card section
+ * ==============================================
+ */
+ .card {
+	display: block;
+    position: relative;
+	max-width: 16rem;
+	padding-block: 1.75rem;
+	padding-inline: 2rem;
+	border-radius: var(--border-radius);
+	text-decoration: none;
+
+	cursor: pointer;
+	transition: 0.3s;
+ }
+
+ .card:hover {
+	transform: scale(1.1);
+ }
+
+ .card.noninteractive:hover {
+    transform: none;
+ }
+
+ .card i {
+	font-size: var(--font-size-800);
+ }
+
+.icon-background {
+	width: 5rem;
+	height: 5rem;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	border-radius: var(--border-radius-accent);
+	background-color: var(--color-accent);
+}
+
+.icon-background > i {
+	color: var(--color-main-light);
+}
+
+.card-body {
+	margin-top: 1.5rem;
+	margin-bottom: .25rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: flex-end;
+	gap: 1rem;
+}
+
+.card-body > hr {
+	width: 100%;
+	border-color: #000;
+	opacity: 0.5;
+}
+
+.card-body > p {
+	text-align: right;
+	font-size: 1rem;
+}

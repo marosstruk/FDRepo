@@ -1,0 +1,99 @@
+/**
+ * ==============================================
+ * Hero section
+ * ==============================================
+ */
+section.hero {
+	gap: 2rem;
+	padding-inline: 2rem;
+}
+
+h1 {
+	font-size: var(--font-size-800);
+	font-weight: 700;
+}
+
+h2 {
+	font-size: var(--font-size-700);
+	font-weight: 700;
+}
+
+p {
+	font-size: var(--font-size-450);
+}
+
+.hero-text > h1 {
+	margin-bottom: 2rem;
+}
+
+.hero-image {
+	position: relative;
+	width: 100%;
+	height: 90%;
+	border-radius: var(--border-radius);
+	overflow: hidden;
+}
+
+.hero-image::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	clip-path: polygon(0% 0%, 25% 0%, 0% 100%);
+	background-color: var(--color-accent);
+}
+
+.hero-image::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	clip-path: polygon(100% 0%, 100% 100%, 75% 100%);
+	background-color: var(--color-accent);
+}
+
+.hero-image > img {
+	object-fit: cover;
+}
+
+/**
+ * ==============================================
+ * Article section
+ * ==============================================
+ */
+.article {
+	width: 95%;
+	height: 178px;
+	margin-inline: auto;
+
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	overflow: hidden;
+}
+
+.article > div {
+	width: 100%;
+	height: 100%;
+	padding-inline: 2rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.article a {
+	align-self: flex-end;
+	text-decoration: none; 
+	font-size: var(--font-size-450);
+	font-weight: 500;
+	transition: .3s;
+}
+
+.article a:hover {
+	transform: scale(1.1);
+}

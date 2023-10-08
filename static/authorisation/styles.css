@@ -1,0 +1,8 @@
+.credentials-form-container {
+    max-width: 540px;
+    margin-inline: auto;
+}
+
+.credentials-form-container > form {
+    width: 100%;
+}

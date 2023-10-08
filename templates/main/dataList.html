@@ -1,0 +1,32 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static "main/components/table.css" %}">
+{% endblock %}
+
+{% block title %}Data List View{% endblock %}
+
+{% block content %}
+
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Company</th>
+                    <th scope="col">Registered Number</th>
+                    <th scope="col">Reporting Period</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr onclick="window.location='/data/{{row.id}}';" style="cursor: pointer;">
+                    {% for value in row.values %}
+                    <td>{{value}}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

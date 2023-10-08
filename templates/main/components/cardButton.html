@@ -1,0 +1,25 @@
+<div class="relative">
+    <a href="/uploadPdf" class="card background-light" data-auth="anyone">
+        <div class="card-header">
+            <div class="icon-background">
+                <i class="bi {{ icon }}"></i>
+            </div>
+        </div>
+        <div class="card-body">
+            <h3 class="header-medium">{{ header }}</h3>
+            <hr>
+            <p>{{ text }}</p>
+        </div>
+    </a>
+
+    {% comment %} <form method="post" enctype="multipart/form-data" class="upload-form background-light flex-center">
+        {% csrf_token %}
+        <div class="drop-zone">
+            <span class="drop-zone__prompt">Drop file(s) here or click to upload</span>
+            {{ form }}
+        </div>
+        <button type="submit" value="submit_file" class="drop-zone-btn__submit"
+                data-bs-toggle="modal" data-bs-target="#parsingFiles" disabled>Submit</button>
+        <button type="reset" value="clear_file" class="drop-zone-btn__clear"><i class="bi bi-x-lg"></i></button>
+    </form> {% endcomment %}
+</div>

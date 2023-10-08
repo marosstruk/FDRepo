@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+
+{% block title %}View Company{% endblock %}
+
+{% block content %}
+    <h1>{{ c.name }}</h1>
+    <form method="post" action="#">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+            {% for fc in c.financialstatement_set.all %}
+                {% if fc.year >= 2015 %}
+                    <li>
+                        <input type="checkbox" value="clicked" name="c{{fc.id}}" checked>
+                        {{ fc.text }}
+                    </li>
+                {% else %}
+                    <li>
+                        <input type="checkbox" value="clicked" name="c{{fc.id}}">
+                        {{ fc.text }}
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <button type="submit" name="save" value="save">Save</button>
+        <input type="text" name="newFC">
+        <button type="submit" name="addNewFC" value="addNewFC">Add Financial Statement</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+:root {
+	--color-main-light: white;
+	--color-main-dark: black;
+	--color-accent: #850000;
+
+	--border-radius: 5px;
+	--border-radius-accent: 10px;
+
+	--content-width: min(1200px, 100%);
+	--content-padding-inline: min(1.25rem, 3%);
+
+	--font-size-800: 3rem;
+	--font-size-750: 2.5rem;
+	--font-size-700: 2.25rem;
+	--font-size-500: 1.5rem;
+	--font-size-450: 1.25rem;
+	--font-size-400: 1rem;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+	/* color: var(--color-main-dark); */
+}
+
+a {
+	color: var(--color-main-dark);
+}
+
+dialog {
+	margin: auto;
+}
+
+/**
+ * ==============================================
+ * Utility Classes
+ * ==============================================
+ */
+.padding-medium {
+	padding: 2.5rem;
+}
+
+.padding-small {
+	padding: 1.5rem;
+}
+
+.padding-block-large {
+	padding-block: 3.5rem;
+}
+
+.margin-bottom-medium {
+	margin-bottom: 2.5rem;
+}
+
+.black-and-white {
+	background-color: white;
+	color: black;
+}
+
+.background-dark {
+	background-color: var(--color-main-dark);
+}
+
+.background-light {
+	background-color: var(--color-main-light);
+}
+
+.background-accent {
+	background-color: var(--color-accent);
+}
+
+.text-color-light {
+	color: var(--color-main-light);
+}
+
+.shadow {
+	box-shadow: 0 .5rem 0.5rem rgba(0, 0, 0, .2);
+}
+
+.column-split-even {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 1fr;
+}
+
+.column-split-66-34 {
+	display: grid;
+	grid-template-columns: 1.5fr 1fr;
+}
+
+.column-split-75-25 {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}
+
+.center-vertically {
+	align-items: center;
+}
+
+.gap-3 {
+	gap: 3.875rem;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+}
+
+.flex-left {
+	display: flex;
+	justify-content: left;
+}
+
+.noninteractive {
+	pointer-events: none;
+}
+
+.active {
+	width: 100%;
+	height: 100%;
+}
+
+.relative {
+	position: relative;
+}
+
+/**
+ * ==============================================
+ * Header (navigation bar)
+ * ==============================================
+ */
+.header {
+	position: sticky;
+	top: 0;
+	left: 0;
+	padding: var(--content-padding-inline) 2.5rem;
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;
+
+	background-color: white;
+}
+
+.header.small {
+	padding: 0.5rem 2.5rem;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2.5rem;
+}
+
+.navbar a {
+	color: var(--color-main-dark);
+	text-decoration: none;
+	text-wrap: nowrap;
+	transition: .3s;
+}
+
+.navbar a:hover {
+	transform: scale(1.1);
+}
+
+.logo {
+	font-size: var(--font-size-700);
+}
+
+.logo.small{
+	font-size: var(--font-size-500);
+}
+
+/**
+ * ==============================================
+ * Main content
+ * ==============================================
+ */
+.content {
+	width: var(--content-width);
+	padding-inline: var(--content-padding-inline);
+	margin-inline: auto;
+}
+
+section {
+	margin-top: 4rem;
+	padding-bottom: 2rem;
+}
+
+.header-large {
+	font-size: var(--font-size-750);
+	font-weight: 700;
+	line-height: calc(1.5 * var(--font-size-750));
+}
+
+.header-medium {
+	font-size: var(--font-size-700);
+	font-weight: 700;
+}
+
+/**
+ * ==============================================
+ * Footer
+ * ==============================================
+ */
+footer {
+	margin-top: 6rem;
+	align-items: flex-start;
+}
+
+footer a,
+footer h3 {
+	width: -moz-fit-content;
+	width: fit-content;
+
+	display: block;
+	text-decoration: none;
+	font-size: var(--font-size-400);
+}
+
+footer h3 {
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+}
+
+.newsletter-sign-up p,
+.newsletter-sign-up label,
+.newsletter-sign-up input,
+.newsletter-sign-up button {
+	font-size: var(--font-size-400);
+}
+
+.newsletter-sign-up label {
+	position: relative;
+}
+
+/* .newsletter-sign-up label::after {
+	content: attr(aria-label);
+	position: absolute;
+	inset: 0;
+
+	padding-left: .4rem;
+	text-wrap: nowrap;
+	font-weight: 300;
+	font-style: italic;
+	color: #6A6A6A;
+} */
+
+.newsletter-sign-up input {
+	width: min(40ch, 100%);
+	padding: .3rem;
+	margin-top: .4rem;
+
+	border: none;
+	appearance: none;
+	background: #f2f2f2;
+}
+
+.newsletter-sign-up input::placeholder {
+	font-style: italic;
+	color: hsl(0, 0%, 59%);
+}
+
+.newsletter-sign-up button {
+	padding-block: .3rem;
+	padding-inline: 3rem;
+	margin-top: .5rem;
+	border: none;
+	color: var(--color-main-light);
+	background-color: #E44F0F;
+	font-weight: 500;
+}
+
+.copyright {
+	width: 100%;
+	margin-top: 3rem;
+	background-color: #f0f0f0;
+}
+
+.copyright p {
+	padding: 1rem;
+	text-align: center;
+	font-size: var(--font-size-400);
+}
+
+/**
+ * ==============================================
+ * AI Assistant Chat
+ * ==============================================
+ */
+.chat-container {
+	position: absolute;
+	bottom: 60px;
+	right: 20px;
+	width: 400px;
+	resize: both;
+	overflow: auto;
+	min-width: 300px;
+	min-height: 400px;
+	max-width: 90%;
+	max-height: 90%;
+	transform: rotate(180deg);
+	border-radius: 15px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	background-color: #ffffff;
+	display: none;
+}
+
+.chatbubble {
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+	padding: 10px;
+	display: none;
+}
+
+.chatbubble i {
+	font-size: x-large;
+}
+
+.chatbubble i:hover {
+	cursor: pointer;
+}
+
+
+/**
+ * ==============================================
+ * Dot Typing
+ * ==============================================
+ */
+.dot-typing {
+	position: relative;
+	left: -9999px;
+	width: 10px;
+	height: 10px;
+	padding: 0px 20px;
+	border-radius: 5px;
+	background-color: #000;
+	color: #000;
+	box-shadow: 9984px 0 0 0 #000, 9999px 0 0 0 #000, 10014px 0 0 0 #000;
+	animation: dot-typing 1.5s infinite linear;
+}
+
+@keyframes dot-typing {
+	0% {
+		box-shadow: 9984px 0 0 0 #000, 9999px 0 0 0 #000, 10014px 0 0 0 #000;
+	}
+
+	16.667% {
+		box-shadow: 9984px -10px 0 0 #000, 9999px 0 0 0 #000, 10014px 0 0 0 #000;
+	}
+
+	33.333% {
+		box-shadow: 9984px 0 0 0 #000, 9999px 0 0 0 #000, 10014px 0 0 0 #000;
+	}
+
+	50% {
+		box-shadow: 9984px 0 0 0 #000, 9999px -10px 0 0 #000, 10014px 0 0 0 #000;
+	}
+
+	66.667% {
+		box-shadow: 9984px 0 0 0 #000, 9999px 0 0 0 #000, 10014px 0 0 0 #000;
+	}
+
+	83.333% {
+		box-shadow: 9984px 0 0 0 #000, 9999px 0 0 0 #000, 10014px -10px 0 0 #000;
+	}
+
+	100% {
+		box-shadow: 9984px 0 0 0 #000, 9999px 0 0 0 #000, 10014px 0 0 0 #000;
+	}
+}
+
+/**
+ * ==============================================
+ * Accordion
+ * ==============================================
+ */
+.mg-btm-05 {
+	margin-bottom: .5rem;
+}
+
+.accordion  {
+	position: relative;
+	width: 100%;
+	padding: 10px;
+	overflow: auto;
+}
+
+/* .accordion-item {
+	margin: 0px;
+	margin-bottom: .5rem;
+	border-bottom: 2px solid var(--color-accent);
+} */
+
+.accordion-item:hover .accordion-item-header {
+	position: sticky;
+	top: -10px;
+}
+
+.accordion-item-header {
+	position: relative;
+
+	line-height: 100px;
+	padding: 10px 20px 14px 50px;
+	margin: 0px;
+	background-color: white;
+	
+	transition: .3s;
+	cursor: pointer;
+}
+
+.accordion-item-header:hover {
+	font-size: 2.1rem;
+}
+
+.accordion-item-header::after {
+	content: '∨';
+	position: absolute;
+	right: 20px;
+}
+
+.accordion-item-header.shrink {
+	line-height: 25px;
+	font-size: 1.5rem;
+	padding-left: 20px;
+}
+
+.accordion-item-header.expand {
+	border-bottom: solid black 1px;
+}
+
+.accordion-item-header.expand::after {
+	content: '∧';
+}
+
+.accordion-item-body {
+	height: 0px;
+	overflow: hidden;
+	transition: .5s;
+}
+

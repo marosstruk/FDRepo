@@ -1,0 +1,7 @@
+{% extends "main/base.html" %}
+
+{% block title %}Show PDF{% endblock %}
+
+{% block content %}
+    <embed type="application/pdf" src="data:application/pdf;base64,{{ base64_file }}#toolbar=0&navpanes=0&scrollbar=0" width="100%" height="500px">
+{% endblock %}

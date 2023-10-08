@@ -1,0 +1,104 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static "main/css/home.css" %}">
+<link rel="stylesheet" href="{% static "main/components/cardButton.css" %}">
+{% endblock %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+    <section class="content hero column-split-66-34 center-vertically">
+        <div class="hero-text">
+            <h1>AI-Powered Document Analysis Platform</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias rerum praesentium quis et qui impedit autem quaerat cumque consectetur odio veniam inventore atque, sint!
+            </p>
+        </div>
+        <div class="hero-image">
+            <img src="static/main/images/person-coding-stockphoto.jpg" width="100%" height="100%">
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="article shadow">
+            <img src="static/main/images/document-analysis-free-photo.jpg" width="auto" height="200px">
+            <div>
+                <h2 class="header-medium">Article</h2>
+                <p>Reliably automating document analysis is a significant challenge in many industries. Learn more about how latest technology can help address this issue.</p>
+                <a href="#">Read more<i class="bi bi-caret-right-fill"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="background-dark padding-block-large">
+        <div class="content column-split-even center-vertically gap-3">
+            <h2 class="header-large text-color-light">Begin your document analysis journey now</h2>
+            {% include "main/components/cardButton.html" with
+                icon="bi-file-arrow-up-fill"
+                header="Read"
+                text="Use state-of-the-art OCR model to extract text from the document"
+            %}
+            {% include "main/components/cardButton.html" with
+                icon="bi-file-arrow-down-fill"
+                header="Extract"
+                text="Identify, extract, and parse structured data such as tables"
+            %}
+            {% include "main/components/cardButton.html" with
+                icon="bi-file-bar-graph-fill"
+                header="Analyze"
+                text="Use state-of-the-art OCR model to extract text from the document"
+            %}
+        </div>
+    </section>
+
+    <dialog class="modal" id="processingFiles">
+        <h1>Processing file(s)</h1>
+        <div>
+            <div class="background-dark" role="status">
+                <span>Loading...</span>
+                <span class="loader-processing"></span>
+            </div>
+        </div>
+        <div class="modal-footer justify-content-center">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel operation</button>
+        </div>
+    </dialog>
+
+    <footer>
+        <div class="content column-split-75-25">
+            <div class="column-split-even">
+                <div>
+                    <h1>@LOGO</h1>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <a href="#">FAQ</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookies Policy</a>
+                </div>
+                <div>
+                    <h3>Company</h3>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <form class="newsletter-sign-up">
+                <p>Stay up to date with the latest from &ltcompany&gt</p>
+                <label aria-label="Enter Email">
+                    <input type="email" placeholder="Enter your e-mail address">
+                </label>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="copyright">
+            {% comment %} <hr> {% endcomment %}
+            <p>© 2023 Maros Struk</p>
+        </div>
+    </footer>
+
+{% endblock %}

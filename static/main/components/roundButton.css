@@ -1,0 +1,69 @@
+.color-scheme-blue {
+    color: #004D9B;
+    background-color: #F5F6F7;
+    border-color: #004D9B;
+}
+
+.color-scheme-lime {
+    color: #3A4E18;
+    background-color: #A1DD3B;
+    border-color: #3A4E18;
+}
+
+.color-scheme-green {
+    color: #094926;
+    background-color: #41D885;
+    border-color: #094926;
+}
+
+.color-scheme-purple {
+    color: #610095;
+    background-color: #BA95CE;
+    border-color: #610095;
+}
+
+.color-scheme-orange {
+    color: #713900;
+    background-color: #EE9D4B;
+    border-color: #713900;
+}
+
+/**
+ * ==============================================
+ * Round button
+ * ==============================================
+ */
+.round-button-section {
+    background-color: #323639;
+    padding: 2rem 3rem 2.5rem 3rem;
+}
+
+.round-button-container {
+    display: flex;
+    justify-content: left;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+ .round-button {
+	width: 7.5rem;
+	height: 7.5rem;
+	border: 1px solid;
+    border-radius: 50%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    text-align: center;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.round-button:hover {
+    transform: scale(1.1);
+}
+
+.round-button > i {
+    font-size: 3.75rem;
+}
