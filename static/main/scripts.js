@@ -1,96 +1,96 @@
 /************** CHAT BOX - Start **************/
 
-document.querySelector(".chatbubble").addEventListener("click", (e) => {
-	const chatContainer = document.querySelector(".chat-container");
+// document.querySelector(".chatbubble").addEventListener("click", (e) => {
+// 	const chatContainer = document.querySelector(".chat-container");
 
-	if (chatContainer.style.display === "none") {
-		chatContainer.style.display = "block";
-		updateChatMaxHeight();
-	} else {
-		chatContainer.style.display = "none";
-	}
-});
+// 	if (chatContainer.style.display === "none") {
+// 		chatContainer.style.display = "block";
+// 		updateChatMaxHeight();
+// 	} else {
+// 		chatContainer.style.display = "none";
+// 	}
+// });
 
-document.querySelector("#chatTextArea").addEventListener("keypress", (e) => {
-	if (e.key === "Enter") {
-		e.preventDefault();
+// document.querySelector("#chatTextArea").addEventListener("keypress", (e) => {
+// 	if (e.key === "Enter") {
+// 		e.preventDefault();
 
-		textAreaElem = e.target
-		userInput = textAreaElem.value;
-		textAreaElem.value = "";
+// 		textAreaElem = e.target
+// 		userInput = textAreaElem.value;
+// 		textAreaElem.value = "";
 
-		const chatMsgsContainer = document.querySelector(".chat-container .card-body");
-		// Prevent the chat box expanding when adding a new message
-		chatMsgsContainer.style.maxHeight = `${chatMsgsContainer.offsetHeight}px`;
+// 		const chatMsgsContainer = document.querySelector(".chat-container .card-body");
+// 		// Prevent the chat box expanding when adding a new message
+// 		chatMsgsContainer.style.maxHeight = `${chatMsgsContainer.offsetHeight}px`;
 		
-		displayChatResponse(chatMsgsContainer, userInput, "user");
-		chatMsgsContainer.scrollTop = chatMsgsContainer.scrollHeight;
+// 		displayChatResponse(chatMsgsContainer, userInput, "user");
+// 		chatMsgsContainer.scrollTop = chatMsgsContainer.scrollHeight;
 
-		displayThreeDots(chatMsgsContainer);
+// 		displayThreeDots(chatMsgsContainer);
 
-		fetch("http://127.0.0.1:5000/api/beta/prompt", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				"Access-Control-Origin": "*"
-			},
-			body: userInput
-		})
-		.then(response => response.text())
-		.then(data => {
-			chatMsgsContainer.lastChild.remove(); // Remove the 3 dots
-			displayChatResponse(chatMsgsContainer, data, "AI")
-		});
+// 		fetch("http://127.0.0.1:5000/api/beta/prompt", {
+// 			method: "POST",
+// 			headers: {
+// 				"Content-Type": "application/json",
+// 				"Access-Control-Origin": "*"
+// 			},
+// 			body: userInput
+// 		})
+// 		.then(response => response.text())
+// 		.then(data => {
+// 			chatMsgsContainer.lastChild.remove(); // Remove the 3 dots
+// 			displayChatResponse(chatMsgsContainer, data, "AI")
+// 		});
 
-		// Allow the chat box to expand again to support resize
-		chatMsgsContainer.style.maxHeight = "";
-	}
-});
+// 		// Allow the chat box to expand again to support resize
+// 		chatMsgsContainer.style.maxHeight = "";
+// 	}
+// });
 
-function updateChatMaxHeight() {
-	// const chatContainer = document.querySelector(".chat-container");
-	// const chatContainerHeader = document.querySelector(".chat-container .card-header");
-	// const chatContainerBody = document.querySelector(".chat-container .card-body");
-	// const chatContainerFooter = document.querySelector(".chat-container .card-footer");
+// function updateChatMaxHeight() {
+// 	// const chatContainer = document.querySelector(".chat-container");
+// 	// const chatContainerHeader = document.querySelector(".chat-container .card-header");
+// 	// const chatContainerBody = document.querySelector(".chat-container .card-body");
+// 	// const chatContainerFooter = document.querySelector(".chat-container .card-footer");
 
-	// const bodyMaxHeight = chatContainer.offsetHeight - chatContainerHeader.offsetHeight - chatContainerFooter.offsetHeight + 1;
-	// chatContainerBody.style.maxHeight = `${bodyMaxHeight}px`;
+// 	// const bodyMaxHeight = chatContainer.offsetHeight - chatContainerHeader.offsetHeight - chatContainerFooter.offsetHeight + 1;
+// 	// chatContainerBody.style.maxHeight = `${bodyMaxHeight}px`;
 
-	document.querySelector(".chat-container .card-body").style.maxHeight = "";
-}
+// 	document.querySelector(".chat-container .card-body").style.maxHeight = "";
+// }
 
 
-function displayThreeDots(chatMsgsContainer) {
-	let replyingElem = document.createElement("div");
-	replyingElem.classList.add("d-flex", "flex-row", "justify-content-start", "mb-4");
-	replyingElem.innerHTML = `
-		<div class="p-3 me-3 border" style="border-radius: 15px; background-color: rgba(57, 192, 237,.2);">
-			<div class="dot-typing"></div>
-		</div>`;
-	chatMsgsContainer.appendChild(replyingElem);
-};
+// function displayThreeDots(chatMsgsContainer) {
+// 	let replyingElem = document.createElement("div");
+// 	replyingElem.classList.add("d-flex", "flex-row", "justify-content-start", "mb-4");
+// 	replyingElem.innerHTML = `
+// 		<div class="p-3 me-3 border" style="border-radius: 15px; background-color: rgba(57, 192, 237,.2);">
+// 			<div class="dot-typing"></div>
+// 		</div>`;
+// 	chatMsgsContainer.appendChild(replyingElem);
+// };
 
-function displayChatResponse(chatMsgsContainer, response, from) {
-	let messageElem = document.createElement("div");
-	let justification = "";
-	let backgroundColor = "";
+// function displayChatResponse(chatMsgsContainer, response, from) {
+// 	let messageElem = document.createElement("div");
+// 	let justification = "";
+// 	let backgroundColor = "";
 
-	if (from === "user") {
-		justification = "justify-content-end";
-		backgroundColor = "#fbfbfb";
-	} else {
-		justification = "justify-content-start";
-		backgroundColor = "rgba(57, 192, 237,.2)";
-	}
+// 	if (from === "user") {
+// 		justification = "justify-content-end";
+// 		backgroundColor = "#fbfbfb";
+// 	} else {
+// 		justification = "justify-content-start";
+// 		backgroundColor = "rgba(57, 192, 237,.2)";
+// 	}
 
-	messageElem.classList.add("d-flex", "flex-row", justification, "mb-4");
-	messageElem.innerHTML = `
-		<div class="p-3 me-3 border" style="border-radius: 15px; background-color: ${backgroundColor};">
-			<p class="small mb-0">${response}</p>
-		</div>`;
+// 	messageElem.classList.add("d-flex", "flex-row", justification, "mb-4");
+// 	messageElem.innerHTML = `
+// 		<div class="p-3 me-3 border" style="border-radius: 15px; background-color: ${backgroundColor};">
+// 			<p class="small mb-0">${response}</p>
+// 		</div>`;
 
-	chatMsgsContainer.appendChild(messageElem);
-};
+// 	chatMsgsContainer.appendChild(messageElem);
+// };
 
 /************** CHAT BOX - End **************/
 

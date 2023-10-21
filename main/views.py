@@ -104,8 +104,11 @@ def dataItem(response, id):
     def init():
         try:
             requests.get("http://127.0.0.1:5000/api/beta/init", {"id": id})
+            print("AI Assistant successfully initialized")
+            return
         except:
             print("ERROR: AI Assistant failed to initialize")
+            return
 
     Thread(target=init).start()
     
