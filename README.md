@@ -15,3 +15,7 @@ Frontend for an unstructured document extraction and analysis project, currently
 * Add error handling
 * Add support for all download file types
 * Improve security
+* Host the webapp
+
+## Home page
+![Home page](https://github.com/marosstruk/FDRepo/blob/main/resources/homepage.png)
