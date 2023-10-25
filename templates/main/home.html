@@ -35,7 +35,7 @@ Home
         </div>
     </section>
 
-    <section class="background-dark padding-block-large">
+    <section class="background-dark padding-block-large" id="solutions-section">
         <div class="content column-split-even center-vertically gap-3">
             <h2 class="header-large text-color-light">Begin your document analysis journey now</h2>
             {% include "main/components/cardButton.html" with
@@ -56,7 +56,7 @@ Home
         </div>
     </section>
 
-    <dialog class="modal" id="processingFiles">
+    {% comment %} <dialog class="modal" id="processingFiles">
         <h1>Processing file(s)</h1>
         <div>
             <div class="background-dark" role="status">
@@ -67,7 +67,7 @@ Home
         <div class="modal-footer justify-content-center">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel operation</button>
         </div>
-    </dialog>
+    </dialog> {% endcomment %}
 
     <footer>
         <div class="content column-split-75-25">

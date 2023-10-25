@@ -191,6 +191,12 @@
 // 	});
 // };
 
+$(".solutions-button").on("click", function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#solutions-section").offset().top
+    }, 300);
+});
+
 
 /************** ACCORDION - Start **************/
 
